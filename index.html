@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Утро и Зерно — Кофейня спешелти кофе</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Manrope', 'sans-serif'],
+          },
+          colors: {
+            cream: '#FAF6F0',
+            sand: '#EFE6D8',
+            espresso: '#231712',
+            roast: '#3D281E',
+            caramel: '#C87D4B',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-cream text-espresso font-sans antialiased selection:bg-caramel selection:text-white">
+
+  <!-- Шапка -->
+  <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-espresso/10">
+    <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <span class="w-8 h-8 rounded-full bg-espresso text-cream flex items-center justify-center font-serif text-lg font-bold">У</span>
+        <span class="font-serif text-2xl font-bold tracking-tight">Утро и Зерно</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-espresso/80">
+        <a href="#menu" class="hover:text-caramel transition">Меню</a>
+        <a href="#about" class="hover:text-caramel transition">О нас</a>
+        <a href="#order" class="hover:text-caramel transition">Предзаказ</a>
+        <a href="#contacts" class="hover:text-caramel transition">Контакты</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="tel:+79001234567" class="px-3.5 py-2 rounded-full bg-espresso text-cream text-xs sm:text-sm font-semibold hover:bg-roast transition">
+          Позвонить
+        </a>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg border border-espresso/15" aria-label="Меню">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div id="mobileMenu" class="hidden md:hidden bg-cream border-b border-espresso/10 px-4 py-4 space-y-3 text-sm font-medium">
+      <a href="#menu" class="block py-1 hover:text-caramel">Меню и цены</a>
+      <a href="#about" class="block py-1 hover:text-caramel">Почему к нам заходят</a>
+      <a href="#order" class="block py-1 hover:text-caramel">Заказать ко времени</a>
+      <a href="#contacts" class="block py-1 hover:text-caramel">Адрес и маршрут</a>
+    </div>
+  </header>
+
+  <!-- Главный экран -->
+  <section class="relative overflow-hidden pt-10 pb-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sand text-xs font-semibold text-roast mb-5">
+          <span>★ 4.9 на Яндекс Картах</span>
+          <span>•</span>
+          <span>Ежедневно 07:30 – 22:00</span>
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.08] mb-4">
+          Свежая обжарка и тёплая выпечка у дома
+        </h1>
+        <p class="text-espresso/75 text-base sm:text-lg leading-relaxed mb-7">
+
+Варим классику и авторские напитки на зерне спешелти, печём круассаны каждое утро и готовим ваш заказ ровно к вашему приходу.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#menu" class="px-6 py-3.5 rounded-xl bg-espresso text-cream font-semibold text-center hover:bg-roast transition">
+            Смотреть меню
+          </a>
+          <a href="https://yandex.ru/maps" target="_blank" rel="noopener" class="px-6 py-3.5 rounded-xl bg-sand text-espresso font-semibold text-center hover:bg-espresso/10 transition">
+            Построить маршрут →
+          </a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl bg-sand">
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80"
+            alt="Чашка свежего капучино"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="mt-3 sm:mt-0 sm:absolute sm:-bottom-4 sm:-left-4 bg-white/95 backdrop-blur p-4 rounded-2xl shadow-lg border border-espresso/10 max-w-xs">
+          <p class="text-xs text-espresso/60 font-medium">Комбо утра до 12:00</p>
+          <p class="font-bold text-sm mt-0.5">Капучино 300 мл + миндальный круассан — 390 ₽</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Меню -->
+  <section id="menu" class="py-12 md:py-16 bg-sand/50 border-y border-espresso/10">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+        <div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold">Наше меню</h2>
+          <p class="text-sm text-espresso/70 mt-1">Нажмите «+ В заказ», чтобы сразу собрать предзаказ ко времени</p>
+        </div>
+
+        <!-- Фильтры -->
+        <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1" id="categoryTabs">
+          <button data-cat="all" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold bg-espresso text-cream whitespace-nowrap">Всё</button>
+          <button data-cat="coffee" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-espresso border border-espresso/10 whitespace-nowrap">Кофе</button>
+          <button data-cat="signature" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-espresso border border-espresso/10 whitespace-nowrap">Авторское</button>
+          <button data-cat="bakery" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-espresso border border-espresso/10 whitespace-nowrap">Выпечка</button>
+        </div>
+      </div>
+
+      <div id="menuGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </div>
+  </section>
+
+  <!-- О нас / Преимущества -->
+  <section id="about" class="py-12 md:py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-8">Почему гости возвращаются</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="p-6 rounded-2xl bg-white border border-espresso/10">
+          <div class="text-2xl mb-3">☕ </div>
+          <h3 class="font-bold text-lg mb-1">100% арабика свежей обжарки</h3>
+          <p class="text-sm text-espresso/70 leading-relaxed">Обжариваем зерно каждую неделю, чтобы в чашке всегда был плотный вкус без горечи.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-espresso/10">
+          <div class="text-2xl mb-3">🥐 </div>
+          <h3 class="font-bold text-lg mb-1">Выпечка из печи с 07:30</h3>
+          <p class="text-sm text-espresso/70 leading-relaxed">Хрустящие круассаны, улитки с корицей и сырники готовятся каждое утро к открытию.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-espresso/10">
+          <div class="text-2xl mb-3">⚡ </div>
+          <h3 class="font-bold text-lg mb-1">Без очереди по предзаказу</h3>
+
+<p class="text-sm text-espresso/70 leading-relaxed">Оставьте заявку на сайте — бариста приготовит напиток ровно к указанной минуте.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Предзаказ ко времени -->
+  <section id="order" class="py-12 md:py-16 bg-espresso text-cream">
+    <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-3">Предзаказ без очереди</h2>
+        <p class="text-cream/75 text-sm sm:text-base leading-relaxed mb-6">
+          Выберите напитки из меню выше или напишите пожелания вручную — мы начнём готовить за 5 минут до вашего прихода.
+        </p>
+
+        <div class="p-4 rounded-2xl bg-white/10 border border-white/10">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs uppercase tracking-wider text-cream/60 font-semibold">Выбранные позиции</span>
+            <button id="clearOrderBtn" type="button" class="text-xs text-caramel hover:underline">Очистить</button>
+          </div>
+          <ul id="orderList" class="text-sm space-y-1.5 text-cream/90">
+            <li class="text-cream/50 italic">Пока ничего не выбрано — добавьте из меню выше</li>
+          </ul>
+          <div class="mt-3 pt-3 border-t border-white/10 flex justify-between font-bold">
+            <span>Итого:</span>
+            <span id="orderTotal">0 ₽</span>
+          </div>
+        </div>
+      </div>
+
+      <form id="preorderForm" class="bg-cream text-espresso p-6 rounded-3xl space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-espresso/70 mb-1">Ваше имя</label>
+          <input type="text" required placeholder="Например, Алексей" class="w-full px-4 py-3 rounded-xl bg-white border border-espresso/15 text-sm focus:outline-none focus:border-caramel" />
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-espresso/70 mb-1">Телефон</label>
+            <input type="tel" required placeholder="+7 (999) 000-00-00" class="w-full px-4 py-3 rounded-xl bg-white border border-espresso/15 text-sm focus:outline-none focus:border-caramel" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-espresso/70 mb-1">Во сколько заберёте</label>
+            <input type="time" value="09:30" required class="w-full px-4 py-3 rounded-xl bg-white border border-espresso/15 text-sm focus:outline-none focus:border-caramel" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-espresso/70 mb-1">Комментарий (молоко, сахар)</label>
+          <input type="text" placeholder="Без сахара, на овсяном молоке" class="w-full px-4 py-3 rounded-xl bg-white border border-espresso/15 text-sm focus:outline-none focus:border-caramel" />
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-caramel text-white font-bold text-sm hover:opacity-95 transition">
+          Отправить предзаказ
+        </button>
+        <p id="orderSuccess" class="hidden text-center text-sm font-semibold text-emerald-700 bg-emerald-50 py-2.5 px-3 rounded-xl">
+          ✓ Заказ принят! Ждём вас в кофейне к указанному времени.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <footer id="contacts" class="py-12 bg-cream border-t border-espresso/10">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between gap-6">
+      <div>
+        <p class="font-serif text-2xl font-bold mb-1">Утро и Зерно</p>
+        <p class="text-sm text-espresso/75">ул. Центральная, 14 (вход со стороны сквера)</p>
+        <p class="text-sm text-espresso/75 mt-1">Пн–Вс: 07:30 – 22:00</p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+
+<a href="https://t.me/" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl bg-white border border-espresso/15 text-sm font-semibold hover:border-espresso transition">
+          Telegram
+        </a>
+        <a href="https://wa.me/79001234567" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl bg-white border border-espresso/15 text-sm font-semibold hover:border-espresso transition">
+          WhatsApp
+        </a>
+        <a href="https://yandex.ru/maps" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl bg-espresso text-cream text-sm font-semibold hover:bg-roast transition">
+          Открыть в Яндекс Картах
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuItems = [
+      { id: 1, name: 'Капучино', desc: 'Классический эспрессо с бархатной молочной пеной, 300 мл', price: 240, cat: 'coffee' },
+      { id: 2, name: 'Флэт Уайт', desc: 'Двойной эспрессо и тонкий слой глянцевого молока, 200 мл', price: 260, cat: 'coffee' },
+      { id: 3, name: 'Фильтр-кофе дня', desc: 'Светлая обжарка Эфиопия с нотами ягод и цитрусов, 250 мл', price: 210, cat: 'coffee' },
+      { id: 4, name: 'Раф Солёная Карамель', desc: 'Сливочный раф на домашней карамели с морской солью, 300 мл', price: 320, cat: 'signature' },
+      { id: 5, name: 'Бамбл Апельсин', desc: 'Свежевыжатый апельсиновый сок, карамель и эспрессо со льдом', price: 310, cat: 'signature' },
+      { id: 6, name: 'Миндальный круассан', desc: 'Слоёное тесто на сливочном масле с миндальным кремом', price: 230, cat: 'bakery' },
+    ];
+
+    let cart = [];
+
+    const menuGrid = document.getElementById('menuGrid');
+    const orderList = document.getElementById('orderList');
+    const orderTotal = document.getElementById('orderTotal');
+
+    function renderMenu(filter = 'all') {
+      const list = filter === 'all' ? menuItems : menuItems.filter(i => i.cat === filter);
+      menuGrid.innerHTML = list.map(item => `
+        <div class="p-5 rounded-2xl bg-white border border-espresso/10 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start gap-2 mb-1.5">
+              <h3 class="font-bold text-base">${item.name}</h3>
+              <span class="font-bold text-caramel whitespace-nowrap">${item.price} ₽</span>
+            </div>
+            <p class="text-xs text-espresso/70 leading-relaxed mb-4">${item.desc}</p>
+          </div>
+          <button onclick="addToCart(${item.id})" class="w-full py-2.5 rounded-xl bg-sand/80 hover:bg-espresso hover:text-cream text-xs font-bold transition">
+            + В заказ
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function addToCart(id) {
+      const item = menuItems.find(i => i.id === id);
+      if (item) {
+        cart.push(item);
+        renderCart();
+      }
+    }
+
+    function renderCart() {
+      if (!cart.length) {
+        orderList.innerHTML = '<li class="text-cream/50 italic">Пока ничего не выбрано — добавьте из меню выше</li>';
+        orderTotal.textContent = '0 ₽';
+        return;
+      }
+      orderList.innerHTML = cart.map(i => `<li class="flex justify-between"><span>${i.name}</span><span>${i.price} ₽</span></li>`).join('');
+      const sum = cart.reduce((acc, i) => acc + i.price, 0);
+      orderTotal.textContent = `${sum} ₽`;
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          b.classList.remove('bg-espresso', 'text-cream');
+          b.classList.add('bg-white', 'text-espresso');
+        });
+        btn.classList.remove('bg-white', 'text-espresso');
+        btn.classList.add('bg-espresso', 'text-cream');
+        renderMenu(btn.dataset.cat);
+      });
+    });
+
+    document.getElementById('clearOrderBtn').addEventListener('click', () => {
+      cart = [];
+      renderCart();
+    });
+
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+
+document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    document.getElementById('preorderForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('orderSuccess').classList.remove('hidden');
+      cart = [];
+      renderCart();
+      e.target.reset();
+    });
+
+    renderMenu();
+  </script>
+</body>
+</html>
